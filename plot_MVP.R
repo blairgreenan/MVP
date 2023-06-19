@@ -43,15 +43,15 @@ fig
 pdf("MVP_Temperature_Ross_Ice_Shelf.pdf")
 scatter3D(MVP_tidy_tibble$lon[MVP_survey_time], MVP_tidy_tibble$lat[MVP_survey_time], -1*MVP_tidy_tibble$pres[MVP_survey_time], colvar = MVP_tidy_tibble$temp[MVP_survey_time], 
           phi = 45, theta = 45, col = viridis(256), pch = 19, cex = 0.5, cex.main = 2, 
-          cex.axis = 0.75, cex.lab = 0.75, xlab = "Longitude", ylab = "Latitude", zlab = "Depth (m)", 
-          main = "Temperature", ticktype = "detailed")
+          cex.axis = 0.5, cex.lab = 0.5, xlab = "Longitude", ylab = "Latitude", zlab = "Depth (m)", 
+          clab = "Temperature", ticktype = "detailed")  # changed main to clab
 dev.off()
 
 # Create a 3D scatter plot using the Plot3D library
-png(filename = "MVP_Temperature_Ross_Ice_Shelf.png", width = 2000, height = 2000, units = "px")
+png(filename = "MVP_Temperature_Ross_Ice_Shelf.png", width = 3, height = 3, units = "in", res = 600)
 scatter3D(MVP_tidy_tibble$lon[MVP_survey_time], MVP_tidy_tibble$lat[MVP_survey_time], -1*MVP_tidy_tibble$pres[MVP_survey_time], colvar = MVP_tidy_tibble$temp[MVP_survey_time], 
-          phi = 45, theta = 45, col = viridis(256), pch = 19, cex = 2, cex.main = 5, 
-          cex.axis = 4, cex.lab = 4, cex.colorbar = 4, xlab = "Longitude", ylab = "Latitude", zlab = "Depth (m)", 
-          main = "Temperature", ticktype = "detailed")
+          phi = 45, theta = 45, col = viridis(256), pch = 19, cex = .1, cex.main = .1, 
+          cex.axis = .1, cex.lab = .1, xlab = "Longitude", ylab = "Latitude", zlab = "Depth (m)", 
+          clab = "Temperature", ticktype = "detailed", colkey = list(side = 4, col.axis = "black", col.clab = "black", cex.clab = .1, cex.axis = .1))  # changed main to clab
 dev.off()
 
